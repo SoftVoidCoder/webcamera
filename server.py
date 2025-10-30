@@ -39,3 +39,7 @@ def get_latest_screen():
     if latest_screen and os.path.exists(latest_screen):
         return send_file(latest_screen, mimetype='image/jpeg')
     return 'No image'
+
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
